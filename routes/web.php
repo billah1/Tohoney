@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('Backend.pages.dashboard');
+});
+
+Route::get('/', function () {
+    return view('Frontend.pages.home');
 });
