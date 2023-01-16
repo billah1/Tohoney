@@ -25,3 +25,5 @@
     <script src="{{ asset('assets/Backend') }}/js/common.js"></script>
     <script src="{{ asset('assets/Backend') }}/js/scripts.js"></script>
     <!-- Page Specific Scripts End --> --}}
+
+    @stack('admin_script')
