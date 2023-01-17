@@ -46,9 +46,14 @@
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Setting</button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i>Edit</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-trash"></i>Delete</a></li>
-
+                                    <li><a class="dropdown-item" href="{{ route('category.edit',$category->slug) }}"><i class="fas fa-edit"></i>Edit</a></li>
+                                    <li>
+                                         <form action="{{ route('category.destroy',$category->slug) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="dropdown-item show_confirm" type="submit" ><i class="fas fa-trash"></i>Delete</button>
+                                         </form>
+                                    </li>
                                 </ul>
                             </div>
                          </td>
@@ -66,12 +71,35 @@
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function() {
     $('#dataTable').DataTable( {
         select: true
     } );
+
+    $('.show_confirm').click(function(event){
+        let form =$(this).closest('form');
+        event.preventDefault();
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            form.submit();
+            Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+            )
+        }
+        })
+    })
 } );
 </script>
 @endpush
