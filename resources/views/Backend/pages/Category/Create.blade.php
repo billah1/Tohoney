@@ -13,6 +13,7 @@
         <a href="{{ route('category.index') }}"
             class="btn btn-primary" >
             <i class="fas fa-backward"></i>
+            Back to Categories
         </a>
         </div>
     </div>
