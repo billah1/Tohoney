@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use App\Http\Requests\testimonialStoreRequest;
+use App\Http\Requests\testimonialUpdateRequest;
 
 class TestimonialController extends Controller
 {
@@ -71,9 +72,11 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($client_name_slug)
     {
-        //
+        $testimonial = Testimonial::whereClientSlug($client_name_slug)->first();
+        return view('Backend.pages.Category.edit',compact('testimonial'));
+
     }
 
     /**
@@ -83,9 +86,18 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(testimonialUpdateRequest $request, $client_name_slug)
     {
-        //
+        $testimonial = Testimonial::whereSlug($client_name_slug)->first();
+        $testimonial->update([
+            'client_name' =>$request->client_name,
+            'client_name_slug'=>Str::slug($request->client_name),
+            'client_designation' =>$request->client_designation,
+            'client_message' =>$request->client_message,
+        ]);
+        $this->image_upload($request,$testimonial->id);
+        Toastr::success('Data Updated Syccessfullt');
+        return redirect()->route('testimonial.index');
     }
 
     /**
@@ -94,14 +106,21 @@ class TestimonialController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($client_name_slug)
     {
-        //
+        $testimonial = Testimonial::whereSlug($client_name_slug)->first()->delete();
+        Toastr::success('Data Deleted Syccessfullt');
+        return redirect()->route('testimonial.index');
     }
+
     public function image_upload($request, $item_id){
+
         $testimonial = Testimonial::findorfail($item_id);
+
         if($request->hasfile('client_image')){
+
             if($testimonial->client_image != 'default-client.jpg'){
+
                 $photo_location = 'public/Uploads/testmonials/';
                 $old_photo_location =$photo_location . $testimonial->client_image;
                 unlink(base_path($old_photo_location));
@@ -111,7 +130,7 @@ class TestimonialController extends Controller
             $new_photo_name =$testimonial->id.'.'.
             $uploaded_photo ->getClientOriginalExtension();
             $new_photo_location = $photo_location .$new_photo_name;
-            Image::make($uploaded_photo)->resize(100,100)->save(base_path($new_photo_location),40);
+            Image::make($uploaded_photo)->resize(105,105)->save(base_path($new_photo_location),40);
             $check = $testimonial->update([
                 'client_image' =>$new_photo_name,
             ]);

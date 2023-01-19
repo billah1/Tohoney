@@ -40,8 +40,8 @@
                     @foreach ($categories as $category )
                     <tr>
                         <td scope="row">{{ $categories->firstItem()+$loop->index }}</td>
-                        <td><img src="{{ asset('Uploads/Category') }}/{{ $category->category_image }}" alt=""
-                            class="img-fluid rounded h-50 w-50"></td>
+                        <td><img src="{{ asset('Uploads/Category') }}/{{ $category->category_image }}"
+                            class="img-fluid rounded-circle" width="70"alt="" ></td>
                          <td>{{ $category->updated_at->format('d M Y') }}</td>
                          <td>{{ $category->title }}</td>
                          <td>{{ $category->slug }}</td>

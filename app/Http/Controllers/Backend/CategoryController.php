@@ -114,15 +114,19 @@ class CategoryController extends Controller
         return redirect()->route('category.index');
 
     }
+
     public function image_upload($request, $item_id){
+
         $category = Category::findorfail($item_id);
+
         if($request->hasfile('category_image')){
             if($category->category_image != 'default-image.jpg'){
-                $photo_location = 'public/Uploads/category/';
+
+                $photo_location = 'public/Uploads/Category/';
                 $old_photo_location =$photo_location . $category->category_image;
                 unlink(base_path($old_photo_location));
             }
-            $photo_location = 'public/Uploads/category/';
+            $photo_location = 'public/Uploads/Category/';
             $uploaded_photo = $request->file('category_image');
             $new_photo_name =$category->id.'.'.
             $uploaded_photo ->getClientOriginalExtension();

@@ -29,7 +29,7 @@
                         <input type="text" name="title" class="form-control
                          @error('title')
                           is-invalid
-                         @enderror" placeholder="enter Category Ttile" id="">
+                         @enderror" placeholder="enter Category Ttile" id="Category-title">
                             @error('title')
                               <span class="invalid-feedback" role="alert">
                                 <strong>
@@ -40,7 +40,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="category_image" class="form-label">Category Image</label>
-                            <input type="file" class="form-control dropify" name="category_image" id="">
+                            <input type="file" name="category_image" class="form-control dropify @error('category_image')
+                             is-invalid
+                            @enderror"  id="category_image" placeholder="category image">
                                 @error('category_image')
                                   <span class="invalid-feedback" role="alert">
                                     <strong>
