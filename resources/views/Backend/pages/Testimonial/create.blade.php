@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="client_image" class="form-label">Client Image</label>
-                                    <input type="file" name="client_image" class="form-control dropify" name="client_image" id="">
+                                    <input type="file" class="form-control dropify" name="client_image" id="">
                                         @error('client_image')
                                           <span class="invalid-feedback" role="alert">
                                             <strong>

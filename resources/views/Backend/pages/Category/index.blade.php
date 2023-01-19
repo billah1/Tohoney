@@ -28,6 +28,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Last Modified</th>
                         <th scope="col">Category Name</th>
                         <th scope="col">Category Slug</th>
@@ -39,6 +40,8 @@
                     @foreach ($categories as $category )
                     <tr>
                         <td scope="row">{{ $categories->firstItem()+$loop->index }}</td>
+                        <td><img src="{{ asset('Uploads/Category') }}/{{ $category->category_image }}" alt=""
+                            class="img-fluid rounded h-50 w-50"></td>
                          <td>{{ $category->updated_at->format('d M Y') }}</td>
                          <td>{{ $category->title }}</td>
                          <td>{{ $category->slug }}</td>
