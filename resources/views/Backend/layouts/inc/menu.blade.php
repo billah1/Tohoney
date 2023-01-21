@@ -7,7 +7,7 @@
           <span class="label">Dashboard</span>
         </a>
       </li>
-      <li>
+       <li>
         <a href="#categories" data-href="">
           <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
           <span class="label">Categories</span>
@@ -26,19 +26,37 @@
         </ul>
       </li>
       <li>
-        <a href="#orders" data-href="Orders.html">
-          <i data-cs-icon="cart" class="icon" data-cs-size="18"></i>
-          <span class="label">Orders</span>
+        <a href="#products" data-href="">
+          <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
+          <span class="label">Products</span>
         </a>
-        <ul id="orders">
+        <ul id="products">
           <li>
-            <a href="Orders.List.html">
+            <a href="{{ route('products.index') }}">
               <span class="label">List</span>
             </a>
           </li>
           <li>
-            <a href="Orders.Detail.html">
-              <span class="label">Detail</span>
+            <a href="{{ route('products.create') }}">
+              <span class="label">Add New</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#order" data-href="">
+          <i data-cs-icon="cart" class="icon" data-cs-size="18"></i>
+          <span class="label">order</span>
+        </a>
+        <ul id="order">
+          <li>
+            <a href="orders.List.html">
+              <span class="label">List</span>
+            </a>
+          </li>
+          <li>
+            <a href="orders.Detail.html">
+              <span class="label">Add New</span>
             </a>
           </li>
         </ul>
@@ -57,6 +75,24 @@
           <li>
             <a href="Customers.Detail.html">
               <span class="label">Detail</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#testimonial" data-href="">
+          <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
+          <span class="label">Testimonial</span>
+        </a>
+        <ul id="testimonial">
+          <li>
+            <a href="{{ route('testimonial.index') }}">
+              <span class="label">List</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('testimonial.create') }}">
+              <span class="label">Add New</span>
             </a>
           </li>
         </ul>
