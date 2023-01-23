@@ -42,6 +42,7 @@ Route::prefix('admin/')->group(function(){
 
   Route::resource('category',CategoryController::class);
   Route::resource('testimonial',TestimonialController::class);
+  Route::resource('products',ProductController::class);
 
 
 });
