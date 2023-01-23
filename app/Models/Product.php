@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes;
-    protected $guarded =['id'];
+    use HasFactory,SoftDeletes;
 
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id','id');
-    }
+    protected $guarded =['id'];
 }

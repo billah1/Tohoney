@@ -74,8 +74,8 @@ class TestimonialController extends Controller
      */
     public function edit($client_name_slug)
     {
-        $testimonial = Testimonial::whereClientSlug($client_name_slug)->first();
-        return view('Backend.pages.Category.edit',compact('testimonial'));
+        $testimonial = Testimonial::whereClientNameSlug($client_name_slug)->first();
+        return view('Backend.pages.Testimonial.edit',compact('testimonial'));
 
     }
 
@@ -88,7 +88,7 @@ class TestimonialController extends Controller
      */
     public function update(testimonialUpdateRequest $request, $client_name_slug)
     {
-        $testimonial = Testimonial::whereSlug($client_name_slug)->first();
+        $testimonial = Testimonial::whereClientNameSlug($client_name_slug)->first();
         $testimonial->update([
             'client_name' =>$request->client_name,
             'client_name_slug'=>Str::slug($request->client_name),
@@ -108,7 +108,7 @@ class TestimonialController extends Controller
      */
     public function destroy($client_name_slug)
     {
-        $testimonial = Testimonial::whereSlug($client_name_slug)->first()->delete();
+        $testimonial = Testimonial::whereClientNameSlug($client_name_slug)->first()->delete();
         Toastr::success('Data Deleted Syccessfullt');
         return redirect()->route('testimonial.index');
     }

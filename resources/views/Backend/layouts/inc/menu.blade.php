@@ -25,24 +25,7 @@
           </li>
         </ul>
       </li>
-      <li>
-        <a href="#products" data-href="">
-          <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
-          <span class="label">Products</span>
-        </a>
-        <ul id="products">
-          <li>
-            <a href="{{ route('products.index') }}">
-              <span class="label">List</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('products.create') }}">
-              <span class="label">Add New</span>
-            </a>
-          </li>
-        </ul>
-      </li>
+
       <li>
         <a href="#order" data-href="">
           <i data-cs-icon="cart" class="icon" data-cs-size="18"></i>

@@ -21,11 +21,11 @@ return new class extends Migration
             $table->string('product_code')->unique();
             $table->unsignedMediumInteger('product_price')->default(0);
             $table->unsignedInteger('product_stock')->default(0);
-            $table->unsignedInteger('alert_quality')->default(1);
+            $table->unsignedInteger('alert_quantity')->default(1);
             $table->longText('short_description')->nullable();
             $table->longText('long_description')->nullable();
             $table->longText('additional_info')->nullable();
-            $table->string('product_image')->dafault('default_product.jpg');
+            $table->string('product_image')->default('default_product.jpg');
             $table->unsignedSmallInteger('product_rating')->nullable()->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

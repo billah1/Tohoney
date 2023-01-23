@@ -20,9 +20,10 @@
     <div class="col-12 mt-5">
          <div class="card">
             <div class="card-body">
-                <form action="{{ route('testimonial.update'),$testimonial->client_name_slug }}"
+                <form action="{{ route('testimonial.update',$testimonial->client_name_slug) }}"
                 method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label for="client_name" class="form-label">Client Name</label>
                         <input type="text" name="client_name" value="{{ $testimonial->client_name }}" class="form-control
