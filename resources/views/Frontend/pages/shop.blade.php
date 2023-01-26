@@ -3,7 +3,7 @@
 @section('frontendtitle') Shop Page @endsection
 
 @section('frontend_content')
-   @include('frontend.layouts.inc.breadcrumb', ['pagename' => 'Shop'])
+   @include('Frontend.layouts.inc.breadcrumb', ['pagename' => 'Shop'])
 
 <!-- product-area start -->
 <div class="product-area pt-100">

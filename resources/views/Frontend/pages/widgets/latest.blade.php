@@ -1,3 +1,4 @@
+<!-- product-area start -->
 <div class="product-area">
     <div class="fluid-container">
         <div class="row">
