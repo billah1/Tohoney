@@ -24,3 +24,8 @@
   <script src="{{ asset('assets/Frontend') }}/js/jquery-ui.min.js"></script>
   <!-- main js -->
   <script src="{{ asset('assets/Frontend') }}/js/scripts.js"></script>
+
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+  {!! Toastr::message() !!}
+
+  @stack('frontend_script')

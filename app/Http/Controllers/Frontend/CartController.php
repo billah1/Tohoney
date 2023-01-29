@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Session;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
@@ -39,4 +40,20 @@ class CartController extends Controller
         Toastr::success('Product Added in to Cart');
         return back();
     }
+
+    public function removeFromCart($cart_id)
+    {
+        // dd($cart_id);
+        Cart::remove($cart_id);
+        Toastr::info('Product Removed from Cart!!');
+        return back();
+    }
+
+    // public function removeCoupon($coupon_name)
+    // {
+    //     dd($coupon_name)
+    //     Session::forget('coupon');
+    //     Toastr::success('Coupon Removed', 'Successfully!!');
+    //     return redirect()->back();
+    // }
 }
