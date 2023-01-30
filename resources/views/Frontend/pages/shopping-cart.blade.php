@@ -52,16 +52,16 @@
                             </ul>
                             <h3>Coupon</h3>
                             <p>Enter Your Cupon Code if You Have One</p>
-                            {{-- <div class="cupon-wrap">
+                            <div class="cupon-wrap">
                                 <form action="{{ route('customer.couponapply') }}" method="post">
                                     @csrf
                                     <input type="text" name="coupon_name" placeholder="Cupon Code" class="form-control">
                                     <button type="submit" class="btn btn-danger">Apply Coupon</button>
                                 </form>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
-                    {{-- <div class="col-xl-3 offset-xl-5 col-lg-4 offset-lg-3 col-md-6">
+                    <div class="col-xl-3 offset-xl-5 col-lg-4 offset-lg-3 col-md-6">
                         <div class="cart-total text-right">
                             <h3>Cart Totals</h3>
                             <p>
@@ -81,9 +81,10 @@
                                     <li><span class="pull-left"> Total: </span> ৳{{ $total_price }}</li>
                                 @endif
                             </ul>
-                            <a href="{{ route('customer.checkoutpage') }}">Proceed to Checkout</a>
+                            <a href="checkout.html">Proceed to Checkout</a>
+                            {{-- <a href="{{ route('customer.checkoutpage') }}">Proceed to Checkout</a> --}}
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

@@ -48,6 +48,9 @@ Route::prefix('')->group(function(){
         Route::get('dashboard',[CustomerController::class, 'dashboard'])->name('customer.dashboard');
         Route::get('logout', [RegisterController::class, 'logout'])->name('customer.logout');
 
+        // coupon
+        Route::post('cart/apply-coupon',[CartController::class,'couponApply'])->name('customer.couponapply');
+        Route::get('cart/remove-coupon/{coupon-name}',[CartController::class,'removeCoupon'])->name('customer.couponremove');
      });
 
 });

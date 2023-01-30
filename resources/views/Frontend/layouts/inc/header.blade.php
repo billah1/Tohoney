@@ -11,18 +11,23 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <ul class="d-flex account_login-area">
+                            @auth
                             <li>
                                 <a href="javascript:void(0);"><i class="fa fa-user"></i> My Account <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown_style">
-                                    <li><a href="{{ route('login.page') }}">Login</a></li>
-                                    <li><a href="{{ route('register.page') }}">Register</a></li>
+                                    {{-- <li><a href="{{ route('login.page') }}">Login</a></li>
+                                    <li><a href="{{ route('register.page') }}">Register</a></li> --}}
                                     <li><a href="{{ route('cart.page') }}">Cart</a></li>
                                     <li><a href="checkout.html">Checkout</a></li>
                                     <li><a href="wishlist.html">wishlist</a></li>
                                     <li><a href="{{ route('customer.logout') }}">Logout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('register.page') }}"> Login/Register </a></li>
+                            @endauth
+                            @guest
+                            <li><a href="{{ route('login.page') }}"> Login </a></li>
+                            <li><a href="{{ route('register.page') }}"> Register </a></li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -47,7 +52,6 @@
                                     <a href="javascript:void(0);">Shop <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown_style">
                                         <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
-                                        {{-- <li><a href="single-product.html">Product Details</a></li> --}}
                                         <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                         <li><a href="wishlist.html">Wishlist</a></li>
@@ -57,7 +61,6 @@
                                     <a href="javascript:void(0);">Pages <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown_style">
                                         <li><a href="about.html">About Page</a></li>
-                                        <li><a href="single-product.html">Product Details</a></li>
                                         <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                         <li><a href="wishlist.html">Wishlist</a></li>
@@ -134,30 +137,6 @@
                                     @endforeach
 
                                     <li>Subtotol: <span class="pull-right">${{ $total_price }}</span></li>
-
-                                    {{-- <li class="cart-items">
-                                        <div class="cart-img">
-                                            <img src="{{ asset('assets/frontend') }}/images/cart/3.jpg" alt="">
-                                        </div>
-                                        <div class="cart-content">
-                                            <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                            <span>QTY : 1</span>
-                                            <p>$35.00</p>
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </li> --}}
-                                    {{-- <li class="cart-items">
-                                        <div class="cart-img">
-                                            <img src="{{ asset('assets/frontend') }}/images/cart/2.jpg" alt="">
-                                        </div>
-                                        <div class="cart-content">
-                                            <a href="{{ route('cart.page') }}">Pure Nature Product</a>
-                                            <span>QTY : 1</span>
-                                            <p>$35.00</p>
-                                            <i class="fa fa-times"></i>
-                                        </div>
-                                    </li> --}}
-                                    {{-- <li>Subtotol: <span class="pull-right">$70.00</span></li> --}}
                                     <li>
                                         <button>Check Out</button>
                                     </li>
@@ -188,7 +167,6 @@
                                     <a class="has-arrow" aria-expanded="false" href="javascript:void(0);">Shop </a>
                                     <ul aria-expanded="false">
                                         <li><a href="{{ route('shop.page') }}">Shop Page</a></li>
-                                        <li><a href="single-product.html">Product Details</a></li>
                                         <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                         <li><a href="wishlist.html">Wishlist</a></li>
@@ -198,8 +176,7 @@
                                     <a class="has-arrow" aria-expanded="false" href="javascript:void(0);">Pages </a>
                                     <ul aria-expanded="false">
                                       <li><a href="about.html">About Page</a></li>
-                                      <li><a href="single-product.html">Product Details</a></li>
-                                      <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
+                                     <li><a href="{{ route('cart.page') }}">Shopping cart</a></li>
                                       <li><a href="checkout.html">Checkout</a></li>
                                       <li><a href="wishlist.html">Wishlist</a></li>
                                       <li><a href="faq.html">FAQ</a></li>
