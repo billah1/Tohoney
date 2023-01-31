@@ -5,8 +5,8 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <ul class="d-flex header-contact">
-                            <li><i class="fa fa-phone"></i> +01 123 456 789</li>
-                            <li><i class="fa fa-envelope"></i> youremail@gmail.com</li>
+                            <li><i class="fa fa-phone"></i> +01968949523</li>
+                            <li><i class="fa fa-envelope"></i> billah95780@gmail.com</li>
                         </ul>
                     </div>
                     <div class="col-md-6 col-12">

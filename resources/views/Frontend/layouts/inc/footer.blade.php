@@ -7,9 +7,8 @@
                     <div class="col-lg-12 col-12">
                         <div class="footer-top-text text-center">
                             <ul>
-                                <li><a href="home.html">home</a></li>
-                                <li><a href="#">our story</a></li>
-                                <li><a href="#">feed shop</a></li>
+                                <li><a href="{{ route('home') }}">home</a></li>
+                                <li><a href="{{ route('shop.page') }}">Shop</a></li>
                                 <li><a href="blog.html">how to eat blog</a></li>
                                 <li><a href="contact.html">contact</a></li>
                             </ul>
@@ -40,9 +39,9 @@
                 <div class="col-lg-3 col-md-8 col-sm-12">
                     <div class="footer-adress">
                         <ul>
-                            <li><a href="#"><span>Email:</span> domain@gmail.com</a></li>
-                            <li><a href="#"><span>Tel:</span> 0131234567</a></li>
-                            <li><a href="#"><span>Adress:</span> 52 Web Bangale , Adress line2 , ip:3105</a></li>
+                            <li><a href="#"><span>Email:</span> billah95780@gmail.com</a></li>
+                            <li><a href="#"><span>Tel:</span> 01968949523</a></li>
+                            <li><a href="#"><span>Adress:</span> 128/a Katasshur , Muhammadpur , Dhaka:1215</a></li>
                         </ul>
                     </div>
                 </div>

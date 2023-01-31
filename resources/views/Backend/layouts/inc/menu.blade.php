@@ -43,42 +43,42 @@
             </li>
         </ul>
     </li>
-      <li>
-        <a href="#order" data-href="">
-          <i data-cs-icon="cart" class="icon" data-cs-size="18"></i>
-          <span class="label">order</span>
+    <li>
+        <a href="#orders" data-href="Orders.html">
+            <i data-cs-icon="cart" class="icon" data-cs-size="18"></i>
+            <span class="label">Orders</span>
         </a>
-        <ul id="order">
-          <li>
-            <a href="orders.List.html">
-              <span class="label">List</span>
-            </a>
-          </li>
-          <li>
-            <a href="orders.Detail.html">
-              <span class="label">Add New</span>
-            </a>
-          </li>
+        <ul id="orders">
+            <li>
+                <a href="{{ route('admin.orderlist') }}">
+                    <span class="label">List</span>
+                </a>
+            </li>
+            {{-- <li>
+                <a href="Orders.Detail.html">
+                    <span class="label">Detail</span>
+                </a>
+            </li> --}}
         </ul>
-      </li>
-      <li>
+    </li>
+    <li>
         <a href="#customers" data-href="Customers.html">
-          <i data-cs-icon="user" class="icon" data-cs-size="18"></i>
-          <span class="label">Customers</span>
+            <i data-cs-icon="user" class="icon" data-cs-size="18"></i>
+            <span class="label">Customers</span>
         </a>
         <ul id="customers">
-          <li>
-            <a href="Customers.List.html">
-              <span class="label">List</span>
-            </a>
-          </li>
-          <li>
-            <a href="Customers.Detail.html">
-              <span class="label">Detail</span>
-            </a>
-          </li>
+            <li>
+                <a href="{{ route('admin.customerlist') }}">
+                    <span class="label">List</span>
+                </a>
+            </li>
+            {{-- <li>
+                <a href="Customers.Detail.html">
+                    <span class="label">Detail</span>
+                </a>
+            </li> --}}
         </ul>
-      </li>
+    </li>
       <li>
         <a href="#testimonial" data-href="">
           <i data-cs-icon="cupcake" class="icon" data-cs-size="18"></i>
