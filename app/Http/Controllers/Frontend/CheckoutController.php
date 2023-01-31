@@ -9,9 +9,12 @@ use App\Models\Upazila;
 use App\Models\District;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
+
+use App\Mail\purchaseconfirm;
 use App\Http\Controllers\Controller;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\OrderStoreRequest;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -82,7 +85,7 @@ class CheckoutController extends Controller
         $order = Order::whereId($order->id)->with(['billing', 'orderdetails'])->get();
 
         // Now Send Mail
-        // Mail::to($request->email)->send(new PurchaseConfirm($order));
+        Mail::to($request->email)->send(new purchaseconfirm($order));
 
         Toastr::success('Your Order placed successfully!!!!','Success');
 
